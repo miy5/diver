@@ -11,10 +11,13 @@
           </div>
 
           <div class="post-content">
+            <!-- 投稿したユーザーの画像表示 -->
+
             <ul class="meta-info-cells v4 float-wrapper">
+
               <li>
-                <i class="fa fa-user"></i>By<a href="#">
-                <%= @post_image.user.name %></a>
+                <i class="fa fa-user"></i>By
+                <%= @post_image.user.name %>
               </li>
               <li>
                 <i class="fa fa-calendar"></i><%= @post_image.created_at.strftime('%Y/%m/%d') %>
@@ -60,7 +63,7 @@
                   <div class="comment-avatar">
                     <div class="avatar">
                       <!-- <img src="images/sample-author1.jpg"> -->
-                      <%= attachment_image_tag post_comment.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
+                      <%= attachment_image_tag post_comment.user, :icon, :fill, 60, 60, fallback: "no_image.jpg" %>
                     </div>
                   </div>
                   <div class="comment-text">
