@@ -1,1 +1,10 @@
 <p>いいね一覧</p>
+
+<% @current_user.favorites.each do |favorite| %>
+              <td><%= attachment_image_tag faorite.item, :image, :size =>'200x200' %></td>
+                  <td><%= link_to item_path(like.item_id),class:"item-link" do %>
+                  <%= like.item.item_name %></td>
+                  <% end %>
+                  <td><%= like.item.extra %></td>
+                </tr>
+            <% end %>
