@@ -12,6 +12,7 @@
 
           <div class="post-content">
             <!-- 投稿したユーザーの画像表示 -->
+            <%= attachment_image_tag @post_image.user, :icon, :fill, 60, 60, fallback: "no_image.jpg" %>
 
             <ul class="meta-info-cells v4 float-wrapper">
 
@@ -62,7 +63,6 @@
                 <div class="comment-body bb">
                   <div class="comment-avatar">
                     <div class="avatar">
-                      <!-- <img src="images/sample-author1.jpg"> -->
                       <%= attachment_image_tag post_comment.user, :icon, :fill, 60, 60, fallback: "no_image.jpg" %>
                     </div>
                   </div>
@@ -74,6 +74,9 @@
                       </span>
                     </div>
                     <div class="comment-entry"><%= post_comment.comment %></div>
+                    <% if post_comment.user == current_user %>
+                    <%= link_to "削除", destroy_post_comment_path(@post_image,post_comment), method: :delete %>
+                    <% end %>
                   </div>
                 </div>
               </li>
