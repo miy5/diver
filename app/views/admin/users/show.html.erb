@@ -1,19 +1,19 @@
 <div class="profile-container">
-
     <!-- ユーザー画像追加 -->
     <%= attachment_image_tag @user, :icon, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
-        <h3 class="profile-name">
-        ユーザー名：<%= @user.name %><br>
-        自己紹介：<%= @user.self_introduction %>
-        メールアドレス：<%= @user.email %>
+    <h3 class="profile-name">
+        ユーザー名：
+        <%= @user.name %><br>
+        自己紹介：
+        <%= @user.self_introduction %>
+        メールアドレス：
+        <%= @user.email %>
     </h3>
-    <%= link_to "退会", admin_user_path,class:"item-link", method: :delete, "data-confirm" => "本当に退会させますか？" %>
+    <%= button_to  "退会", admin_user_path,class:"item-link", method: :delete, "data-confirm" => "本当に退会させますか？" %>
 </div>
-
 <!-- カレントユーザーが投稿した画像一覧 -->
 <section class="sct-color-1 slice">
     <div class="container-fluid masonry-container">
-
         <div class="row">
             <div class="col-md-8 col-sm-offset-2">
                 <div class="masonry-wrapper-cols">
@@ -26,6 +26,7 @@
                                     <%= link_to post_image_path(post_image.id) do %>
                                     <%= attachment_image_tag post_image, :image, :size =>'200x200' %>
                                     <% end %>
+                                    <%= button_to  'Destroy',  admin_post_image_path(post_image.id), method: :delete %>
                                     <!-- kaminari表示件数 -->
                                     <%= paginate @post_images, class: "paginate" %>
                                 </div>

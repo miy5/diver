@@ -5,8 +5,8 @@ class Admin::UsersController < Admin::ApplicationController
   end
 
   def index
-    @users = User.all
     @user = User.find_by(params[:id])
+    @users = User.all
   end
 
   def destroy
