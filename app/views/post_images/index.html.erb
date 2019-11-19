@@ -1,10 +1,10 @@
- <section class="sct-color-1 slice">
-  <div class="container-fluid masonry-container">
+  <div class="container">
     <div class="row">
+      <br>
       <div class="col-md-8 col-sm-offset-2">
-        <div class="masonry-wrapper-cols">
-          <div class="masonry-gutter"></div>
+
             <% @post_images.each do |post_image| %>
+                  <div class="col-md-4">
             <div class="masonry-block">
               <div class="block block-image v1">
                 <div class="block-image">
@@ -29,9 +29,8 @@
                 </div>
               </div>
             </div>
+          </div>
             <% end %>
-        </div>
       </div>
     </div>
   </div>
-</section>

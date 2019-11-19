@@ -1,30 +1,38 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-2"></div>
+        <br>
+        <div class="col-md-3"></div>
     <!-- ユーザー画像追加 -->
-        <div class="col-md-8">
-    <%= attachment_image_tag @user, :icon, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
-    <h3 class="profile-name">
+        <div class="col-md-2">
+    <%= attachment_image_tag @user, :icon, :fill, 80, 80, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
+</div>
+<div class="col-md-3">
+    <h4 class="profile-name">
         ユーザー名：
         <%= @user.name %><br>
         自己紹介：
-        <%= @user.self_introduction %>
+        <%= @user.self_introduction %><br>
         メールアドレス：
         <%= @user.email %>
-    </h3>
-    <%= button_to  "退会", admin_user_path,class:"item-link", method: :delete, "data-confirm" => "本当に退会させますか？" %>
+    </h4>
+</div>
+        <div class="col-md-2">
+    <%= button_to  "退会させる", admin_user_path,class:"item-link", method: :delete, "data-confirm" => "本当に退会させますか？" %>
 </div>
         <div class="col-md-2"></div>
 
 </div>
+
 <!-- カレントユーザーが投稿した画像一覧 -->
 <section class="sct-color-1 slice">
     <div class="container-fluid masonry-container">
         <div class="row">
+            <br><br>
             <div class="col-md-8 col-sm-offset-2">
                 <div class="masonry-wrapper-cols">
                     <div class="masonry-gutter"></div>
                     <% @post_images.each do |post_image| %>
+                        <div class="col-md-4">
                     <div class="masonry-block">
                         <div class="block block-image v1">
                             <div class="block-image">
@@ -39,6 +47,7 @@
                             </div>
                         </div>
                     </div>
+                </div>
                     <% end %>
                 </div>
             </div>
