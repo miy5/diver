@@ -1,5 +1,8 @@
-<div class="profile-container">
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
     <!-- ユーザー画像追加 -->
+        <div class="col-md-8">
     <%= attachment_image_tag @user, :icon, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
     <h3 class="profile-name">
         ユーザー名：
@@ -10,6 +13,9 @@
         <%= @user.email %>
     </h3>
     <%= button_to  "退会", admin_user_path,class:"item-link", method: :delete, "data-confirm" => "本当に退会させますか？" %>
+</div>
+        <div class="col-md-2"></div>
+
 </div>
 <!-- カレントユーザーが投稿した画像一覧 -->
 <section class="sct-color-1 slice">
@@ -39,3 +45,5 @@
         </div>
     </div>
 </section>
+</div>
+

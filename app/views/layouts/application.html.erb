@@ -2,11 +2,11 @@
 <html>
 
 <head>
-    <title>Diver</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application' %>
+    <title>Diver</title>
 </head>
 
 <body>
@@ -26,10 +26,10 @@
                 <% else %>
 
                 <li class="">
-                    <%= link_to "ユーザー一覧", %>
+                    <%= link_to "ユーザー一覧", new_user_registration_path %>
                 </li>
                 <li class="">
-                    <%= link_to "ログアウト",  %>
+                    <%= link_to "ログアウト", new_user_session_path %>
                 </li>
 
                 <% end %>
