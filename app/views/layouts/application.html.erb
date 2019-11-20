@@ -13,7 +13,7 @@
     <!-- ヘッダー -->
     <div class="header navbar cleafix">
             <nav class="nav navbar-nav navbar-center">
-                <%= link_to 'Divingram', post_images_path,class:"header-logo" %>
+                <%= image_tag 'img/02diver_s.png', :class=>"header-logo" %><%= link_to 'Divingram', post_images_path %>
             </nav>
             <% if user_signed_in? %>
             <ul class="nav navbar-nav navbar-right">

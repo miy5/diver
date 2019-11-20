@@ -19,13 +19,14 @@
  .hoge{color: red;}
 
  .header {
-    background-color: blue;
+    /*background-color: blue;*/
+    background-image: url(img/P6050313.jpg);
     width: 100%;
+  background-size: cover;
  }
 
 .header-logo{
-    color: white;
-    height: 50px;
+    height: 100px;
 }
 
 .header-link{
@@ -36,7 +37,7 @@
 .main-visual {
   width: 100%;
   height: 300px;
-  background-image: url(images/850_8073.jpg);
+  background-image: url(img/850_8073.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -49,4 +50,12 @@
 }
 .main-visual-text {
   color: #fff;
+}
+
+body {
+  /*background-image: url(img/P6050234.jpg);*/
+  background: #1c92d2;
+  background: -webkit-linear-gradient(to right, #1c92d2, #f2fcfe);
+  background: linear-gradient(to right, #1c92d2, #f2fcfe);
+
 }
