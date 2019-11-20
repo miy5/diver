@@ -5,5 +5,9 @@ class ApplicationController < ActionController::Base
   		devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:email])
         devise_parameter_sanitizer.permit(:sign_im, keys: [:email])
  	end
- 	before_action :authenticate_user!
+ 	# before_action :authenticate_user!
+ 	 def after_sign_out_path_for(resource)
+    post_images_path
+    end
+
 end

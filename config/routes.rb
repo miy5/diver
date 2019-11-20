@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   end
   get 'favorites', to: 'favorites#index'
   delete 'post_images/:post_image_id/post_comments/destroy/:id', to: 'post_comments#destroy',as:'destroy_post_comment'
-  resources :users, only: [:show, :edit, :destroy, :update]
-  resources :tops, only: [:index]
+  resources :users, only: [:show, :edit, :destroy, :update, :top]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

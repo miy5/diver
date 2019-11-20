@@ -73,13 +73,11 @@
             <hr>
             <!-- Add comment section -->
             <div class="row">
-                <h5 class="section-title left">
-                    <span>コメント</span>
-                </h5>
-            <div class="col-md-">
+
+            <div class="col-md-8 col-sm-offset-2">
                 <%= form_for [@post_image, @post_comment] do |f| %>
                 <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-md-8 col-sm-offset-2">
                         <%= f.text_area :comment, rows:'3', class: "form-control",placeholder: "コメントをここに" %>
                     </div>
                 </div>
