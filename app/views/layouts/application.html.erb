@@ -11,25 +11,32 @@
 
 <body>
     <!-- ヘッダー -->
-    <div class="header">
-        <% if user_signed_in? %>
-
-        <li class="">
-            <%= link_to 'マイページ', user_path(current_user.id) %>
-        </li>
-        <li class="">
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        </li>
-        <% else %>
-        <li class="">
-            <%= link_to "新規登録", new_user_registration_path %>
-        </li>
-        <li class="">
-            <%= link_to "ログイン", new_user_session_path %>
-        </li>
-        <% end %>
+    <div class="header navbar cleafix">
+            <nav class="nav navbar-nav navbar-center">
+                <%= link_to 'Divingram', post_images_path,class:"header-logo" %>
+            </nav>
+            <% if user_signed_in? %>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <%= link_to 'マイページ', user_path(current_user.id),class:"header-link" %>
+                </li>
+                <li>
+                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class:"header-link" %>
+                </li>
+            </ul>
+            <% else %>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <%= link_to "新規登録", new_user_registration_path,class:"header-link" %>
+                </li>
+                <li>
+                    <%= link_to "ログイン", new_user_session_path,class:"header-link" %>
+                </li>
+                <% end %>
+            </ul>
+        </div>
     </div>
     <%= yield %>
 </body>
-</html>
 
+</html>

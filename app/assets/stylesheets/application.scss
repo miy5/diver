@@ -19,9 +19,19 @@
  .hoge{color: red;}
 
  .header {
-    background-color: #c4edb2;
+    background-color: blue;
     width: 100%;
  }
+
+.header-logo{
+    color: white;
+    height: 50px;
+}
+
+.header-link{
+    text-decoration: none;
+    color: white;
+}
 
 .main-visual {
   width: 100%;
