@@ -3,12 +3,18 @@
         <p>いいね一覧</p>
     </div>
     <div class="row">
+              <div class="sliderArea">
+  <div class="sliderWide">
+    <div class="slider">
         <% @current_user.favorites.each do |favorite| %>
-        <div class="col-md-3">
+        <!-- <div class="col-md-3"> -->
             <%= link_to post_image_path(favorite.post_image.id) do %>
             <%= attachment_image_tag favorite.post_image, :image, :size =>'200x200' %>
             <% end %>
-        </div>
+        <!-- </div> -->
         <% end %>
     </div>
+</div>
+</div>
+</div>
 </div>

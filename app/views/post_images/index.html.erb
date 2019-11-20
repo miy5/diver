@@ -1,30 +1,46 @@
-  <div class="container">
-      <div class="main-visual">
-    <div class="main-visual-content">
-      <p class="main-visual-text">
-        Divingram<br>
-      </p>
-    </div>
-  </div>
+<!-- <div class="container"> -->
+      <!-- スライド -->
 
-    <div class="about-visual">
-    <div class="about-visual-content">
-       <p class="about-visual-text">
-        当サイトはダイバー向けの画像投稿サイトです。<br>
-        会員登録することにより、画像の投稿やコメント、<br>
-        気に入った画像にリアクションが可能です。<br>
-        一度投稿した画像とコメント削除のみ可能です。
-      </p>
-    </div>
-    </div>
+    <div class="slide1">
+        <!-- <div style=background:url('img/850_8073.jpg')> -->
+          <div>
+            <%= image_tag 'img/850_8073.jpg' %>
+        </div>
+        <div>
+            <%= image_tag 'img/P6050234.jpg' %>
+        </div>
+        <div>
+            <%= image_tag 'img/P6050313.jpg' %>
+        </div>
 
 
+<!--     <div class="row">
+        <div class="main-visual">
+            <div class="main-visual-content">
+                <p class="main-visual-text">
+                    Divingram<br>
+                </p>
+            </div>
+        </div> -->
+
+    </div>
     <div class="row">
-      <br>
-      <div class="col-md-8 col-sm-offset-2">
-
+        <div class="about-visual">
+            <div class="about-visual-content">
+                <p class="about-visual-text">
+                    当サイトはダイバー向けの画像投稿サイトです。<br>
+                    会員登録することにより、画像の投稿やコメント、<br>
+                    気に入った画像にリアクションが可能です。<br>
+                    一度投稿した画像とコメント削除のみ可能です。
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <br>
+        <div class="col-md-8 col-sm-offset-2">
             <% @post_images.each do |post_image| %>
-                  <div class="col-md-4">
+            <div class="col-md-4">
                 <div class="image">
                     <%= link_to post_image_path(post_image.id) do %>
                     <%= attachment_image_tag post_image, :image, :size =>'200x200' %>
@@ -33,12 +49,11 @@
                     <%= paginate @post_images, class: "paginate" %>
                 </div>
                 <div class="block-content">
-                  <%= image_tag 'img/usericon1.png', :class=>"user-icon" %>By
-                      <%= post_image.user.name %><br><br>
+                    <%= image_tag 'img/usericon1.png', :class=>"user-icon" %>By
+                    <%= post_image.user.name %>
                 </div>
-          </div>
+            </div>
             <% end %>
-      </div>
+        </div>
     </div>
-</div>
-  </div>
+<!-- </div> -->
