@@ -20,7 +20,7 @@
                         <br>
                     </p>
                 </div>
-                <i class="fa fa-user"></i>By
+                <%= image_tag 'img/usericon1.png', :class=>"user-icon" %>By
                 <%= @post_image.user.name %>
                 <i class="fa fa-calendar"></i>
                 <%= @post_image.created_at.strftime('%Y/%m/%d') %>

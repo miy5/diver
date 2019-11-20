@@ -1,62 +1,47 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
-
 <div class="container">
     <!-- ユーザー画像追加 -->
     <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-2">
-            <%= attachment_image_tag @user, :icon, :fill, 80,80, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
-        </div>
-        <div class="col-md-2">
-            <h4 class="profile-name">
+        <div class="col-md-4">
+            <%= attachment_image_tag @user, :icon, :fill, 80,80, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%><br>
+            <h5 class="profile-name">
                 ユーザー名：
                 <%= @user.name %><br>
                 自己紹介：
                 <%= @user.self_introduction %>
-            </h4>
+            </h5>
             <% if @user.id == current_user.id %>
             メールアドレス：
             <%= @user.email %>
+            <%= link_to "プロフィール編集", edit_user_path(@user), class: "pull-right" %>
+            <br>
+            <i class="fas fa-fish">
+                <%= link_to "いいね一覧", favorites_path %></i>
+            <% end %>
+            <!-- カレントユーザーが投稿した画像一覧 -->
+            <br>
+            <% if @user.id == current_user.id %>
+            <%= link_to '投稿フォーム', new_post_image_path %>
+            <% end %>
         </div>
-        <div class="col-md-2">
-                <%= link_to "プロフィール編集", edit_user_path(@user), class: "pull-right" %>
-                <br>
-                <i class="fas fa-fish"><%= link_to "いいね一覧", favorites_path %></i>
-        </div>
-    </div>
-        <div class="col-md-3"></div>
-    <% end %>
-    <!-- カレントユーザーが投稿した画像一覧 -->
-    <section class="sct-color-1 slice">
-        <div class="container-fluid masonry-container">
-            <li class="">
-                <%= link_to '投稿フォーム', new_post_image_path %>
-            </li>
-            <div class="row">
-                <div class="col-md-8 col-sm-offset-2">
-                    <div class="masonry-wrapper-cols">
-                        <div class="masonry-gutter"></div>
-                        <% @post_images.each do |post_image| %>
-                        <div class="col-md-4">
-                            <div class="masonry-block">
-                                <div class="block block-image v1">
-                                    <div class="block-image">
-                                        <div class="view view-first">
-                                            <%= link_to post_image_path(post_image.id) do %>
-                                            <%= attachment_image_tag post_image, :image, :size =>'200x200' %>
-                                            <% end %>
-                                            <!-- kaminari表示件数 -->
-                                            <%= paginate @post_images, class: "paginate" %>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <% end %>
-                    </div>
+        <div class="col-md-8">
+            <br>
+            <% @post_images.each do |post_image| %>
+            <div class="col-md-4">
+                <div class="block-image">
+                    <%= link_to post_image_path(post_image.id) do %>
+                    <%= attachment_image_tag post_image, :image, :size =>'200x200' %>
+                    <% end %>
+                </div>
+                <div class="block-content">
+                    <br><br>
                 </div>
             </div>
+            <% end %>
         </div>
-    </section>
+    </div>
+    <!-- kaminari表示件数 -->
+    <%= paginate @post_images, class: "paginate" %>
+</div>
 </div>

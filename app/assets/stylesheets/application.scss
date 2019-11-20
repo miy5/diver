@@ -36,7 +36,7 @@
 
 .main-visual {
   width: 100%;
-  height: 300px;
+  height: 100%;
   background-image: url(img/850_8073.jpg);
   background-size: cover;
   background-position: center;
@@ -52,6 +52,27 @@
   color: #fff;
 }
 
+.about-visual{
+  /*background-image: url(img/P6050234.jpg);*/
+  background-color: #ABBDDA;
+  width: 100%;
+  height: 100%;
+ /* background-size: cover;
+  background-position: center;*/
+  /*padding-top: 105px;*/
+}
+
+.about-visual-content {
+  width: 40%;
+  height: 300px;
+  background: rgba(0,0,0,0.5);
+  text-align: center;
+  padding-top: 105px;
+}
+.about-visual-text {
+  color: #fff;
+}
+
 body {
   /*background-image: url(img/P6050234.jpg);*/
   background: #1c92d2;
@@ -59,3 +80,37 @@ body {
   background: linear-gradient(to right, #1c92d2, #f2fcfe);
 
 }
+
+.user-icon{
+    height: 20px;
+}
+
+.wrapper{
+    min-height: 100vh;
+    padding-bottom: 30px;
+}
+
+footer {
+    background-color: #2E4B71;
+    width: 100%;
+    height: 100px
+}
+
+.footer-text{
+    width: 200px;
+    padding-top: 25px;
+    margin:0 auto;
+    color: #fff;
+}
+
+
+/*admin*/
+
+.table{
+  background-color: #fff;
+  border: solid 2px #2E4B71;
+}
+
+/*table th, table td {
+  border: dashed 1px orange;
+}*/

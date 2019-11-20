@@ -3,39 +3,37 @@
         <p>管理者　User一覧</p>
     </div>
     <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>No.</th>
-                        <th>アイコン</th>
-                        <th>会員名</th>
-                        <th>メールアドレス</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% @users.each do |user| %>
-                    <tr>
-                        <td>
-                            <%= user.id %>
-                        </td>
-                        <td>
-                            <%= link_to admin_user_path(user.id) do %>
-                            <%= attachment_image_tag user, :icon, :size =>'100x100', fallback: "no_image.jpg" %>
+      <div class="col-md-8 col-sm-offset-2">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>アイコン</th>
+                                <th>会員名</th>
+                                <th>メールアドレス</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @users.each do |user| %>
+                            <tr>
+                                <td>
+                                    <%= user.id %>
+                                </td>
+                                <td>
+                                    <%= link_to admin_user_path(user.id) do %>
+                                    <%= attachment_image_tag user, :icon, :size =>'100x100', fallback: "no_image.jpg" %>
+                                    <% end %>
+                                </td>
+                                <td class="hoge">
+                                    <%= user.name %>
+                                </td>
+                                <td>
+                                    <%= user.email %>
+                                </td>
+                            </tr>
                             <% end %>
-                        </td>
-                        <td class="hoge">
-                            <%= user.name %>
-                        </td>
-                        <td>
-                            <%= user.email %>
-                        </td>
-                    </tr>
-                    <% end %>
-                </tbody>
-            </table>
+                        </tbody>
+                    </table>
         </div>
-        <div class="col-md-2"></div>
     </div>
 </div>

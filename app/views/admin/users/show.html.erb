@@ -2,57 +2,54 @@
     <div class="row">
         <br>
         <div class="col-md-3"></div>
-    <!-- ユーザー画像追加 -->
+        <!-- ユーザー画像追加 -->
         <div class="col-md-2">
-    <%= attachment_image_tag @user, :icon, :fill, 80, 80, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
-</div>
-<div class="col-md-3">
-    <h4 class="profile-name">
-        ユーザー名：
-        <%= @user.name %><br>
-        自己紹介：
-        <%= @user.self_introduction %><br>
-        メールアドレス：
-        <%= @user.email %>
-    </h4>
-</div>
+            <%= attachment_image_tag @user, :icon, :fill, 80, 80, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
+        </div>
+        <div class="col-md-3">
+            <h4 class="profile-name">
+                ユーザー名：
+                <%= @user.name %><br>
+                自己紹介：
+                <%= @user.self_introduction %><br>
+                メールアドレス：
+                <%= @user.email %>
+            </h4>
+        </div>
         <div class="col-md-2">
-    <%= button_to  "退会させる", admin_user_path,class:"item-link", method: :delete, "data-confirm" => "本当に退会させますか？" %>
-</div>
+            <%= button_to  "退会させる", admin_user_path,class:"item-link", method: :delete, "data-confirm" => "本当に退会させますか？" %>
+        </div>
         <div class="col-md-2"></div>
-
-</div>
-
-<!-- カレントユーザーが投稿した画像一覧 -->
-<section class="sct-color-1 slice">
-    <div class="container-fluid masonry-container">
-        <div class="row">
-            <br><br>
-            <div class="col-md-8 col-sm-offset-2">
-                <div class="masonry-wrapper-cols">
-                    <div class="masonry-gutter"></div>
-                    <% @post_images.each do |post_image| %>
+    </div>
+    <!-- カレントユーザーが投稿した画像一覧 -->
+    <section class="sct-color-1 slice">
+        <div class="container-fluid masonry-container">
+            <div class="row">
+                <br><br>
+                <div class="col-md-8 col-sm-offset-2">
+                    <div class="masonry-wrapper-cols">
+                        <div class="masonry-gutter"></div>
+                        <% @post_images.each do |post_image| %>
                         <div class="col-md-4">
-                    <div class="masonry-block">
-                        <div class="block block-image v1">
-                            <div class="block-image">
-                                <div class="view view-first">
-                                    <%= link_to post_image_path(post_image.id) do %>
-                                    <%= attachment_image_tag post_image, :image, :size =>'200x200' %>
-                                    <% end %>
-                                    <%= button_to  'Destroy',  admin_post_image_path(post_image.id), method: :delete %>
-                                    <!-- kaminari表示件数 -->
-                                    <%= paginate @post_images, class: "paginate" %>
+                            <div class="masonry-block">
+                                <div class="block block-image v1">
+                                    <div class="block-image">
+                                        <div class="view view-first">
+                                            <%= link_to post_image_path(post_image.id) do %>
+                                            <%= attachment_image_tag post_image, :image, :size =>'200x200' %>
+                                            <% end %>
+                                            <%= button_to  'Destroy',  admin_post_image_path(post_image.id), method: :delete %>
+                                            <!-- kaminari表示件数 -->
+                                            <%= paginate @post_images, class: "paginate" %>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <% end %>
                     </div>
-                </div>
-                    <% end %>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 </div>
-

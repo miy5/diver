@@ -12,31 +12,37 @@
 <body>
     <!-- ヘッダー -->
     <div class="header navbar cleafix">
-            <nav class="nav navbar-nav navbar-center">
-                <%= image_tag 'img/02diver_s.png', :class=>"header-logo" %><%= link_to 'Divingram', post_images_path %>
-            </nav>
-            <% if user_signed_in? %>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <%= link_to 'マイページ', user_path(current_user.id),class:"header-link" %>
-                </li>
-                <li>
-                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class:"header-link" %>
-                </li>
-            </ul>
-            <% else %>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <%= link_to "新規登録", new_user_registration_path,class:"header-link" %>
-                </li>
-                <li>
-                    <%= link_to "ログイン", new_user_session_path,class:"header-link" %>
-                </li>
-                <% end %>
-            </ul>
-        </div>
+        <nav class="nav navbar-nav navbar-center">
+            <%= image_tag 'img/02diver_s.png', :class=>"header-logo" %>
+            <%= link_to 'Divingram', post_images_path %>
+        </nav>
+        <% if user_signed_in? %>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <%= link_to 'マイページ', user_path(current_user.id),class:"header-link" %>
+            </li>
+            <li>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class:"header-link" %>
+            </li>
+        </ul>
+        <% else %>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <%= link_to "新規登録", new_user_registration_path,class:"header-link" %>
+            </li>
+            <li>
+                <%= link_to "ログイン", new_user_session_path,class:"header-link" %>
+            </li>
+            <% end %>
+        </ul>
     </div>
-    <%= yield %>
+    </div>
+    <div class="wrapper">
+        <%= yield %>
+    </div>
+    <footer>
+        <p class="footer-text">Copyright © Divingram 2019</p>
+    </footer>
 </body>
 
 </html>

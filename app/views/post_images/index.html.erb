@@ -3,13 +3,21 @@
     <div class="main-visual-content">
       <p class="main-visual-text">
         Divingram<br>
-        当サイトはダイバー向けの画像投稿サイトです。<br>
-        会員登録することにより、画像の投稿やコメント、<br>
-        気に入った画像にリアクションが可能です。<br>
-        一度投稿した画像は削除のみ可能です。
       </p>
     </div>
   </div>
+
+    <div class="about-visual">
+    <div class="about-visual-content">
+       <p class="about-visual-text">
+        当サイトはダイバー向けの画像投稿サイトです。<br>
+        会員登録することにより、画像の投稿やコメント、<br>
+        気に入った画像にリアクションが可能です。<br>
+        一度投稿した画像とコメント削除のみ可能です。
+      </p>
+    </div>
+    </div>
+
 
     <div class="row">
       <br>
@@ -17,32 +25,20 @@
 
             <% @post_images.each do |post_image| %>
                   <div class="col-md-4">
-            <div class="masonry-block">
-              <div class="block block-image v1">
-                <div class="block-image">
-                  <div class="view view-first">
+                <div class="image">
                     <%= link_to post_image_path(post_image.id) do %>
                     <%= attachment_image_tag post_image, :image, :size =>'200x200' %>
                     <% end %>
                     <!-- kaminari表示件数 -->
                     <%= paginate @post_images, class: "paginate" %>
-                  </div>
                 </div>
                 <div class="block-content">
-                  <p><%= post_image.caption %></p>
-                  <ul class="inline-meta">
-                    <li>By
-                      <%= post_image.user.name %>
-                    </li>
-                    <li>
-                    <%= link_to "#{post_image.post_comments.count} コメント", post_image_path(post_image.id) %>
-                    </li>
-                  </ul>
+                  <%= image_tag 'img/usericon1.png', :class=>"user-icon" %>By
+                      <%= post_image.user.name %><br><br>
                 </div>
-              </div>
-            </div>
           </div>
             <% end %>
       </div>
     </div>
+</div>
   </div>
