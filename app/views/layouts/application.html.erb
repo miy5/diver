@@ -8,7 +8,6 @@
     <%= javascript_include_tag 'application' %>
     <!-- <link rel="stylesheet" type="text/css" href="assets/stylesheet/slick-theme.scss" / -->
     <!-- <link rel="stylesheet" type="text/css" href="assets/stylesheet/slick.scss" /> -->
-
     <title>Diver</title>
 </head>
 
@@ -39,40 +38,47 @@
             <% end %>
         </ul>
     </div>
-
-    <div class="wrapper">
-        <%= yield %>
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+            <div class="wrapper">
+                <%= yield %>
+            </div>
     </div>
     <footer>
         <p class="footer-text">Copyright © Divingram 2019</p>
     </footer>
-
     <!-- slickの設定内容 -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script type="text/javascript" src="assets/javascripts/slick.min.js"></script> -->
     <script type="text/javascript">
-
+    //top一覧スライド
     $(document).ready(function() {
-    $('.slide1').slick({
-        autoplay: true, //自動再生
-        dots: true, //ドットのナビゲーションを表示
-        infinite: true, //スライドのループ有効化
-        speed: 1000, //切り替えのスピード（小さくすると速くなる）
-        fade: true, //フェードの有効化
+        $('.slide1').slick({
+            autoplay: true, //自動再生
+            dots: true, //ドットのナビゲーションを表示
+            infinite: true, //スライドのループ有効化
+            speed: 1000, //切り替えのスピード（小さくすると速くなる）
+            fade: true, //フェードの有効化
+        });
     });
-    });
-
+    // / いいね一覧スライド
     $(document).ready(function() {
-  $('.slider').slick({
-    autoplay: true,
-    centerMode: true,
-    centerPadding: '5%',
-    dots: true,
-    focusOnSelect: true,
-    infinite: true,
-    touchMove: true
-  });
-});
+        $('.slider').slick({
+            autoplay: true,
+            centerMode: true,
+            centerPadding: '5%',
+            dots: true,
+            focusOnSelect: true,
+            infinite: true,
+            touchMove: true
+        });
+    });
     </script>
 </body>
 

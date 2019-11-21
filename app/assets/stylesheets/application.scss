@@ -15,6 +15,25 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @font-face {
+  font-family: 'Quattrocento';
+  src: url('fonts/Quattrocento.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes bubble {
+  0% {
+    bottom: -100px;
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(100px);
+  }
+  100% {
+    bottom: 1000px;
+  }
+}
 
  .header {
     /*background-color: blue;*/
@@ -23,12 +42,13 @@
     width: 100%;
   /*background-size: cover;*/
     position: absolute;
-    width: calc(100% - 300px);
-    height: 80px;
+    width: 100%;
+    height: 90px;
     left: 0;
     top: 0;
-    z-index: 1000;
-    margin-bottom: 100px
+    z-index: 100;
+    /*margin-bottom: 100px*/
+    background-color: rgba(0,0,0,0.43);
  }
 
 .header-logo{
@@ -59,12 +79,12 @@
 }
 */
 .about-visual{
-  background-image: url(img/01diver_s.png);
-  background-color: #ABBDDA;
+  background-image: url(img/about_img.jpg);
+  background-color: black;
   width: 100%;
   height: 300px;
   background-size: 500px;
-  background-position: center;
+  background-position: left;
   /*padding-top: 105px;*/
 }
 
@@ -76,6 +96,8 @@
   padding-top: 105px;
 }
 .about-visual-text {
+  font-family: 'Quattrocento';
+  font-size: 10px;
   color: #fff;
 }
 
@@ -89,8 +111,74 @@
 
 .position{
   margin-top: 100px
+  /*background-color: rgba(255,255,255,0.4);*/
 }
 
+
+.bubble {
+  position: absolute;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  animation: bubble 10s ease-in infinite;
+}
+
+.bubble:nth-child(1) {
+  width: 20px;
+  height: 20px;
+  left: 10%;
+  animation-duration: 5s;
+}
+
+.bubble:nth-child(2) {
+  width: 30px;
+  height: 30px;
+  left: 20%;
+  animation-delay: 1s;
+}
+
+.bubble:nth-child(3) {
+  width: 30px;
+  height: 30px;
+  left: 30%;
+  animation-duration: 3s;
+}
+
+.bubble:nth-child(4) {
+  width: 50px;
+  height: 50px;
+  left: 45%;
+  animation-duration: 6s;
+  animation-delay: 2s;
+}
+
+.bubble:nth-child(5) {
+  width: 10px;
+  height: 10px;
+  left: 60%;
+  animation-duration: 3.5s;
+}
+
+.bubble:nth-child(6) {
+  width: 30px;
+  height: 30px;
+  left: 70%;
+  animation-duration: 5s;
+}
+
+.bubble:nth-child(7) {
+  width: 25px;
+  height: 25px;
+  left: 80%;
+  animation-duration: 4s;
+}
+
+
+
+/*topスライド*/
 .slide1 {
   width: 100%;
   margin: 0 auto 50px;
@@ -99,10 +187,10 @@
 }
 .slide1 img{
   width: 100%;
-  height: 550px;
+  height: 600px;
 }
 
-
+/*いいねスライド*/
 .sliderArea {
     /*background: #fff;*/
     overflow: hidden;
@@ -157,10 +245,12 @@
 
 body {
   /*background-image: url(img/P6050234.jpg);*/
-  background: #1c92d2;
+  /*background: #1c92d2;
   background: -webkit-linear-gradient(to right, #1c92d2, #f2fcfe);
-  background: linear-gradient(to right, #1c92d2, #f2fcfe);
-
+  background: linear-gradient(to right, #1c92d2, #f2fcfe);*/
+  background: #0575e6;
+  background: -webkit-linear-gradient(to right, #0575e6, #021b79);
+  background: linear-gradient(to right, #0575e6, #021b79);
 }
 
 .user-icon{

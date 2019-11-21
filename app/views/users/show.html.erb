@@ -1,30 +1,31 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
 <div class="container">
+
     <!-- ユーザー画像追加 -->
     <div class="row">
-            <div class="position">
+        <div class="position">
         <div class="col-md-4">
-            <%= attachment_image_tag @user, :icon, :fill, 80,80, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%><br>
-            <h5 class="profile-name">
-                ユーザー名：
-                <%= @user.name %><br>
-                自己紹介：
-                <%= @user.self_introduction %>
-            </h5>
-            <% if @user.id == current_user.id %>
-            メールアドレス：
-            <%= @user.email %>
-            <%= link_to "プロフィール編集", edit_user_path(@user), class: "pull-right" %>
-            <br>
-            <i class="fas fa-fish">
-                <%= link_to "いいね一覧", favorites_path %></i>
-            <% end %>
-            <!-- カレントユーザーが投稿した画像一覧 -->
-            <br>
-            <% if @user.id == current_user.id %>
-            <%= link_to '投稿フォーム', new_post_image_path %>
-            <% end %>
+                <%= attachment_image_tag @user, :icon, :fill, 80,80, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%><br>
+                <div class="profile-text">
+                    ユーザー名：
+                    <%= @user.name %><br>
+                    自己紹介：
+                    <%= @user.self_introduction %>
+                <% if @user.id == current_user.id %>
+                メールアドレス：
+                <%= @user.email %>
+                </div>
+                <%= link_to "プロフィール編集", edit_user_path(@user), class: "pull-right" %>
+                <br>
+                <i class="fas fa-fish">
+                    <%= link_to "いいね一覧", favorites_path %></i>
+                <% end %>
+                <!-- カレントユーザーが投稿した画像一覧 -->
+                <br>
+                <% if @user.id == current_user.id %>
+                <%= link_to '投稿フォーム', new_post_image_path %>
+                <% end %>
         </div>
         <div class="col-md-8">
             <br>
@@ -35,15 +36,12 @@
                     <%= attachment_image_tag post_image, :image, :size =>'200x200' %>
                     <% end %>
                 </div>
-                <div class="block-content">
-                    <br><br>
-                </div>
+                <div class="block-content"></div>
             </div>
             <% end %>
         </div>
+        <!-- kaminari表示件数 -->
+        <%= paginate @post_images, class: "paginate" %>
+        </div>
     </div>
-    </div>
-    <!-- kaminari表示件数 -->
-    <%= paginate @post_images, class: "paginate" %>
-</div>
 </div>
