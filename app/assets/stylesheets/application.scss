@@ -15,11 +15,10 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
  @font-face {
-  font-family: 'Quattrocento';
-  src: url('fonts/Quattrocento.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  font-family: "uzura";
+  src: font-url('uzura.ttf');
 }
 
 @keyframes bubble {
@@ -48,7 +47,7 @@
     top: 0;
     z-index: 100;
     /*margin-bottom: 100px*/
-    background-color: rgba(0,0,0,0.43);
+    background-color: rgba(0,0,0,0.0);
  }
 
 .header-logo{
@@ -79,31 +78,38 @@
 }
 */
 .about-visual{
-  background-image: url(img/about_img.jpg);
-  background-color: black;
-  width: 100%;
-  height: 300px;
-  background-size: 500px;
-  background-position: left;
+  /*background-image: url(img/about_img.jpg);*/
+  /*background: #000428; 
+  background: -webkit-linear-gradient(to left, #000428, #004e92);
+  background: linear-gradient(to left, #000428, #004e92);*/
+  background-color: rgba(0,0,8,0.1);
+  /*width: 100%;
+  /*height: 300px;
+  /*background-size: 500px;
+  background-position: left;*/
   /*padding-top: 105px;*/
+
+/*  width: 100%;
+  background-image: url(img/about_img.jpg);
+  background-size: cover;
+  background-position: left;*/
+
 }
 
-.about-visual-content {
+.about-visual-left {
   width: 40%;
   height: 300px;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,51,102,0.1);
+  vertical-align: middle;
   text-align: center;
   padding-top: 105px;
 }
 .about-visual-text {
-  font-family: 'Quattrocento';
-  font-size: 10px;
+  font-size: 15px;
   color: #fff;
 }
 
-.about-logo{
-  height: 100%;
-}
+
 
 .block-content{
   padding-bottom: 20px
@@ -114,7 +120,39 @@
   /*background-color: rgba(255,255,255,0.4);*/
 }
 
+body {
+  /*background-image: url(img/P6050234.jpg);*/
+  background: #1c92d2;
+  background: -webkit-linear-gradient(to right, #1c92d2, #f2fcfe);
+  background: linear-gradient(to right, #1c92d2, #f2fcfe);
+  font-family: "uzura";
+}
 
+.user-icon{
+    height: 20px;
+}
+
+.wrapper{
+    min-height: 100vh;
+    padding-bottom: 30px;
+}
+
+footer {
+    background-color: #2E4B71;
+    width: 100%;
+    height: 100px
+}
+
+.footer-text{
+    width: 200px;
+    padding-top: 25px;
+    margin:0 auto;
+    color: #fff;
+}
+
+
+
+/*バブルアニメーション*/
 .bubble {
   position: absolute;
   bottom: 0;
@@ -187,12 +225,12 @@
 }
 .slide1 img{
   width: 100%;
-  height: 600px;
+  height: 800px;
 }
 
 /*いいねスライド*/
 .sliderArea {
-    /*background: #fff;*/
+    background: #fff;
     overflow: hidden;
 }
 .sliderWide {
@@ -243,38 +281,6 @@
 }
 
 
-body {
-  /*background-image: url(img/P6050234.jpg);*/
-  /*background: #1c92d2;
-  background: -webkit-linear-gradient(to right, #1c92d2, #f2fcfe);
-  background: linear-gradient(to right, #1c92d2, #f2fcfe);*/
-  background: #0575e6;
-  background: -webkit-linear-gradient(to right, #0575e6, #021b79);
-  background: linear-gradient(to right, #0575e6, #021b79);
-}
-
-.user-icon{
-    height: 20px;
-}
-
-.wrapper{
-    min-height: 100vh;
-    padding-bottom: 30px;
-}
-
-footer {
-    background-color: #2E4B71;
-    width: 100%;
-    height: 100px
-}
-
-.footer-text{
-    width: 200px;
-    padding-top: 25px;
-    margin:0 auto;
-    color: #fff;
-}
-
 
 /*admin*/
 
@@ -292,6 +298,3 @@ footer {
 .block-image{
   padding-top: 20px
 }
-/*table th, table td {
-  border: dashed 1px orange;
-}*/
