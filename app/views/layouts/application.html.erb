@@ -34,6 +34,7 @@
             <% end %>
         </ul>
     </div>
+    <!-- 泡CSS -->
     <div class="bubbles">
         <div class="bubble"></div>
         <div class="bubble"></div>
@@ -71,7 +72,7 @@
             infinite: true, //スライドのループ有効化
             speed: 800, //切り替えのスピード（小さくすると速くなる）
             fade: true, //フェードの有効化
-             cssEase: 'cubic-bezier(.645, .045, .355, 1)'
+            cssEase: 'cubic-bezier(.645, .045, .355, 1)'
         });
     });
     // / いいね一覧スライド
@@ -87,6 +88,7 @@
         });
     });
 
+// post?imageふわっと出てくる
     $(function(){
     $(window).scroll(function (){
         $('.fadein').each(function(){
@@ -99,6 +101,10 @@
         });
     });
 });
+
+
+$('#box1').animate({boxShadow: '0 0 30px #44f'});
+
     </script>
 </body>
 

@@ -10,14 +10,6 @@
         <%= image_tag 'img/P6050313.jpg' %>
         <p class="fade-text">Divingram</p>
     </div>
-    <!--     <div class="row">
-        <div class="main-visual">
-            <div class="main-visual-content">
-                <p class="main-visual-text">
-                    Divingram<br>
-                </p>
-            </div>
-        </div> -->
 </div>
 <div class="row">
     <div class="about-visual">
@@ -46,10 +38,12 @@
         <div class="col-md-4">
             <section class="fadein">
                 <div class="image">
+                  <div id="box1" onmouseover="jQuery(this).stop().animate({boxShadow: '0 0 30px #44f'})" onmouseout="jQuery(this).stop().animate({boxShadow: '0 0 10px #000'})">
                     <%= link_to post_image_path(post_image.id) do %>
                     <%= attachment_image_tag post_image, :image, :size =>'300x300' %>
                     <% end %>
-                </div>
+                  </div>
+                  </div>
                 <div class="block-content">
                     <%= image_tag 'img/usericon1.png', :class=>"user-icon" %>By
                     <%= post_image.user.name %>
