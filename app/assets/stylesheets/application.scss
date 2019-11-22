@@ -15,6 +15,8 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "materialize";
+ @import "material_icons";
 
  @font-face {
   font-family: "uzura";
@@ -35,18 +37,12 @@
 }
 
  .header {
-    /*background-color: blue;*/
- /*   background-color: rgba(255,0,0,0.15);
-    background-image: url(img/P6050313.jpg);
-    width: 100%;
-  /*background-size: cover;*/
     position: absolute;
     width: 100%;
     height: 90px;
     left: 0;
     top: 0;
     z-index: 100;
-    /*margin-bottom: 100px*/
     background-color: rgba(0,0,0,0.0);
  }
 
@@ -82,7 +78,8 @@
   /*background: #000428;
   background: -webkit-linear-gradient(to left, #000428, #004e92);
   background: linear-gradient(to left, #000428, #004e92);*/
-  background-color: rgba(0,0,8,0.1);
+
+  /*background-color: rgba(100,0,155,0.1);*/
   /*width: 100%;
   /*height: 300px;
   /*background-size: 500px;
@@ -93,7 +90,9 @@
   background-image: url(img/about_img.jpg);
   background-size: cover;
   background-position: left;*/
-
+  background: #3a7bd5;
+  background: -webkit-linear-gradient(to right, #3a7bd5, #3a6073);
+  background: linear-gradient(to right, #3a7bd5, #3a6073);
 
 }
 
@@ -229,9 +228,24 @@ footer {
   height: 800px;
 }
 
+/*画像一覧JS*/
+/* 画面外にいる状態 */
+.fadein {
+    opacity : 0.1;
+    transform : translate(0, 50px);
+    transition : all 500ms;
+    }
+
+/* 画面内に入った状態 */
+.fadein.scrollin {
+    opacity : 1;
+    transform : translate(0, 0);
+    }
+
+
 /*いいねスライド*/
 .sliderArea {
-    background: #fff;
+    background-color: rgba(0,0,0,0.0);
     overflow: hidden;
 }
 .sliderWide {
@@ -286,16 +300,50 @@ footer {
 /*admin*/
 
 .table{
-  background-color: #fff;
+  /*background-color: #fff;*/
+  background: rgba(0,51,102,0.1);
   border: solid 2px #2E4B71;
 }
 
 .admin-user{
-  background-color: #fff;
+  /*background-color: #fff;*/
+  /*background: rgba(0,51,102,0.1);*/
   padding-bottom: 30px;
   margin-top: 100px;
 }
 
+.admin_submit{
+  font-family: "uzura";
+  font-size: 15px;
+  background-color: #3169d1;
+  border: 2px solid #3169d1;
+  color: #fff !important;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.admin_submit:hover {
+  font-family: "uzura";
+  font-size: 15px;
+    background-color: transparent;
+    border: 2px solid #998bfa;
+    color: #998bfa !important;
+    border-radius: 30px;
+}
 .block-image{
   padding-top: 20px
+}
+
+.admin-text{
+  text-decoration: none;
+  font-size: 30px;
+  color: white;
+}
+
+.admin-link{
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
 }

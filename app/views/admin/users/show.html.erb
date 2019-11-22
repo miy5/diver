@@ -2,12 +2,9 @@
     <div class="row">
         <div class="admin-user">
             <br>
-            <div class="col-md-3"></div>
             <!-- ユーザー画像追加 -->
-            <div class="col-md-2">
+            <div class="col-md-4">
                 <%= attachment_image_tag @user, :icon, :fill, 80, 80, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
-            </div>
-            <div class="col-md-3">
                 <h5 class="profile-name">
                     ユーザー名：
                     <%= @user.name %><br>
@@ -16,32 +13,24 @@
                     メールアドレス：
                     <%= @user.email %>
                 </h5>
+                <%= button_to  "退会させる", admin_user_path, class:"admin_submit", method: :delete, "data-confirm" => "本当に退会させますか？" %>
             </div>
-            <div class="col-md-2">
-                <%= button_to  "退会させる", admin_user_path,class:"item-link", method: :delete, "data-confirm" => "本当に退会させますか？" %>
-            </div>
-            <div class="col-md-2"></div>
             <!-- カレントユーザーが投稿した画像一覧 -->
-            <div class="row">
-                <br><br>
-                <div class="col-md-8 col-sm-offset-2">
+                <div class="col-md-8">
                     <% @post_images.each do |post_image| %>
                     <div class="col-md-4">
                         <div class="block-image">
-                            <div class="view view-first">
                                 <%= link_to post_image_path(post_image.id) do %>
                                 <%= attachment_image_tag post_image, :image, :size =>'200x200' %>
                                 <% end %>
-                                <%= button_to  'Destroy',  admin_post_image_path(post_image.id), method: :delete %>
+                                <%= button_to  'Destroy',  admin_post_image_path(post_image.id), method: :delete,class:"admin_submit" %>
                                 <!-- kaminari表示件数 -->
                                 <%= paginate @post_images, class: "paginate" %>
-                            </div>
                         </div>
                     </div>
                     <% end %>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    <%= link_to "戻る", admin_users_path, class:"admin-link" %>
 </div>

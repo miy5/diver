@@ -1,39 +1,49 @@
 <div class="container">
     <div class="row">
-        <p>管理者　User一覧</p>
-    </div>
-    <div class="row">
-      <div class="col-md-8 col-sm-offset-2">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>No.</th>
-                                <th>アイコン</th>
-                                <th>会員名</th>
-                                <th>メールアドレス</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <% @users.each do |user| %>
-                            <tr>
-                                <td>
-                                    <%= user.id %>
-                                </td>
-                                <td>
-                                    <%= link_to admin_user_path(user.id) do %>
-                                    <%= attachment_image_tag user, :icon, :size =>'100x100', fallback: "no_image.jpg" %>
-                                    <% end %>
-                                </td>
-                                <td>
-                                    <%= user.name %>
-                                </td>
-                                <td>
-                                    <%= user.email %>
-                                </td>
-                            </tr>
-                            <% end %>
-                        </tbody>
-                    </table>
+        <div class="position">
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+                <div class="admin-text">
+                    <%= image_tag 'img/usericon1.png', :size=>"300×300" %> User管理
+                </div>
+            </div>
+            <div class="col-md-5">
+                <%= link_to "管理者ログアウト", destroy_admin_session_path, method: :delete,class:"admin-link" %>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-sm-offset-1">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>アイコン</th>
+                            <th>会員名</th>
+                            <th>メールアドレス</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @users.each do |user| %>
+                        <tr>
+                            <td>
+                                <%= user.id %>
+                            </td>
+                            <td>
+                                <%= link_to admin_user_path(user.id) do %>
+                                <%= attachment_image_tag user, :icon, :size =>'100x100', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %>
+                                <% end %>
+                            </td>
+                            <td>
+                                <%= user.name %>
+                            </td>
+                            <td>
+                                <%= user.email %>
+                            </td>
+                        </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
