@@ -23,7 +23,7 @@
                                 <%= link_to post_image_path(post_image.id) do %>
                                 <%= attachment_image_tag post_image, :image, :size =>'200x200' %>
                                 <% end %>
-                                <%= button_to  'Destroy',  admin_post_image_path(post_image.id), method: :delete,class:"admin_submit" %>
+                                <%= button_to  '削除',  admin_post_image_path(post_image.id), method: :delete,class:"admin_submit" %>
                                 <!-- kaminari表示件数 -->
                                 <%= paginate @post_images, class: "paginate" %>
                         </div>

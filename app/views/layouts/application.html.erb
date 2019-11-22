@@ -12,8 +12,10 @@
 <body>
     <!-- ヘッダー -->
     <div class="header">
+            <%= link_to post_images_path do %>
             <%= image_tag 'img/02diver_s.png', :class=>"header-logo" %>
-            <%= link_to 'Divingram', post_images_path %>
+            Divingram
+            <% end %>
         <% if user_signed_in? %>
         <ul class="nav navbar-nav navbar-right">
             <li>
@@ -88,7 +90,7 @@
         });
     });
 
-// post?imageふわっと出てくる
+// postimageふわっと出てくる
     $(function(){
     $(window).scroll(function (){
         $('.fadein').each(function(){
@@ -103,9 +105,26 @@
 });
 
 
-$('#box1').animate({boxShadow: '0 0 30px #44f'});
+
+            $(window).on('load',function(){
+                $('.ex1').textyleF();
+                $('.ex2').textyleF({
+                    duration : 1000,
+                    delay : 200,
+                    easing : 'cubic-bezier(0.785, 0.135, 0.15, 0.86)',
+                    callback : function(){
+                        $(this).css({
+                        color : '#fff',
+                        transition : '1s',
+                        });
+                        $('.desc').css('opacity',1);
+                    }
+                    });
+            });
 
     </script>
+
+
 </body>
 
 </html>

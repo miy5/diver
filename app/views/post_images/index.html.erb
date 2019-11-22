@@ -12,16 +12,20 @@
     </div>
 </div>
 <div class="row">
+            <section class="fadein">
     <div class="about-visual">
         <div class="about-visual-left">
-            <div class="about-visual-text">
+            <!-- <div class="about-visual-text"> -->
+                <p class="ex1">集えダイバー!<br>
                 当サイトはダイバー向けの画像投稿サイトです。<br>
-                会員登録することにより、画像の投稿やコメント、<br>
-                気に入った画像にリアクションが可能です。<br>
-                一度投稿した画像とコメント削除のみ可能です。
-            </div>
+                会員登録することにより、画像の投稿やコメント、<br></p>
+                <p class="ex2">気に入った画像にリアクションが可能です。<br>
+                一度投稿した画像とコメント削除のみ可能です。</p>
+                <p class="desc">海の世界を共有しよう</p>
+            <!-- </div> -->
         </div>
     </div>
+  </section>
 </div>
 <div class="row">
     <div class="col-md-8 col-sm-offset-2">
@@ -38,11 +42,9 @@
         <div class="col-md-4">
             <section class="fadein">
                 <div class="image">
-                  <div id="box1" onmouseover="jQuery(this).stop().animate({boxShadow: '0 0 30px #44f'})" onmouseout="jQuery(this).stop().animate({boxShadow: '0 0 10px #000'})">
                     <%= link_to post_image_path(post_image.id) do %>
                     <%= attachment_image_tag post_image, :image, :size =>'300x300' %>
                     <% end %>
-                  </div>
                   </div>
                 <div class="block-content">
                     <%= image_tag 'img/usericon1.png', :class=>"user-icon" %>By
