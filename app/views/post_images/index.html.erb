@@ -21,13 +21,13 @@
                     <p class="ex2">Divingramについて</p>
                 </div>
                 <div class="col-md-6">
+                    <p class="ex2">海の世界を共有しよう</p><br><br>
                     <div class="about-visual-text">
                         <p class="desc">当サイトはダイバー向けの画像投稿サイトです。<br>
                             会員登録することにより、画像の投稿やコメント<br>
                             気に入った画像にリアクションが可能です。<br>
-                            一度投稿した画像とコメントは削除のみ可能です。</p><br><br>
+                            一度投稿した画像とコメントは削除のみ可能です。</p>
                     </div>
-                    <p class="ex2">海の世界を共有しよう</p>
                 </div>
             </div>
         </div>
@@ -49,10 +49,12 @@
         <div class="col-md-4">
             <section class="fadein">
                 <div class="image">
+                  <div class="img_wrap">
                     <%= link_to post_image_path(post_image.id) do %>
                     <%= attachment_image_tag post_image, :image, :size =>'300x300' %>
                     <% end %>
                 </div>
+              </div>
                 <div class="block-content">
                     <%= image_tag 'img/usericon1.png', :class=>"user-icon" %>By
                     <%= post_image.user.name %>

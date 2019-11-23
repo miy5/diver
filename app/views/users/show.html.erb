@@ -26,8 +26,7 @@
                 </div>
                 <%= link_to "プロフィール編集", edit_user_path(@user), class: "pull-right" %>
                 <br>
-                <i class="fas fa-fish">
-                    <%= link_to "いいね一覧", favorites_path %></i>
+                 <%= link_to "いいね一覧", favorites_path %>
                 <% end %>
                 <br>
                 <% if @user.id == current_user.id %>

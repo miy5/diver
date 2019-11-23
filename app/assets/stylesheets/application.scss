@@ -450,7 +450,7 @@ p.desc {
 
 
 .fadein1 {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
     animation-name: fadein1;
     animation-duration: 2s;
@@ -466,6 +466,55 @@ to {
 }
 }
 
+/*.img_wrap{
+  border: 1px solid #ddd;
+  width: 300px;
+  height: 226px;
+  margin: 0 auto;
+  overflow: hidden;
+  cursor: pointer;
+}
+.img_wrap img{
+  width: 100%;
+  transition-duration: 0.5s;
+}
+.img_wrap:hover img{
+  transform: scale(1.2);
+  transition-duration: 0.5s;
+}*/
+
+.img_wrap{
+  border: 1px solid #ddd;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+}
+.img_wrap img{
+  width: 100%;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+.img_wrap img:hover{
+  transform: scale(1.2) rotate(9deg);
+  transition-duration: 0.5s;
+}
 
 
 
+
+/*.img_wrap{
+  border: 1px solid #ddd;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.img_wrap img{
+  width: 100%;
+  transform: scale(1.1);
+  cursor: pointer;
+  filter: grayscale(100%);
+  transition-duration: 0.5s;
+}
+.img_wrap img:hover{
+  filter: grayscale(0);
+  transition-duration: 0.5s;
+}*/
