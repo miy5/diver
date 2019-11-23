@@ -45,7 +45,7 @@
  .header {
     position: absolute;
     width: 100%;
-    height: 90px;
+    height: 120px;
     left: 0;
     top: 0;
     z-index: 100;
@@ -54,6 +54,7 @@
 
 .header-logo{
     height: 100px;
+    color: white;
 }
 
 .header-link{
@@ -87,14 +88,14 @@
 
 .about-visual-left {
   width: 100%;
-  height: 300px;
+  height: 500px;
   background: rgba(0,51,102,0.1);
   vertical-align: middle;
   text-align: center;
   padding-top: 105px;
 }
 .about-visual-text {
-  font-size: 15px;
+  font-size: 10px;
   color: #fff;
   animation: about-visual-text_2851 2.6s ease infinite;
   transform-origin: 50% 50%;
@@ -123,12 +124,14 @@
   /*background-color: rgba(255,255,255,0.4);*/
 }
 
+
 body {
   /*background-image: url(img/P6050234.jpg);*/
   background: #1c92d2;
   background: -webkit-linear-gradient(to right, #1c92d2, #f2fcfe);
   background: linear-gradient(to right, #1c92d2, #f2fcfe);
   font-family: "uzura";
+
 }
 
 .user-icon{
@@ -412,43 +415,19 @@ body {
 p {
   margin: 0;
   padding: 0;
-  font-size: 40px;
+  font-size: 50px;
   line-height: 1;
   letter-spacing: .3rem;
   color: #253057;
 }
 p.desc {
   padding: 1rem;
-  font-size: 3rem;
+  font-size: 20px;
   letter-spacing: .2rem;
   opacity: 0;
   transition: 2s 1.5s;
 }
 
-@media screen and (max-width: 450px) {
-  p {
-    font-size: 3rem;
-  }
-  p.desc {
-    font-size: .5rem;
-  }
-}
-
-/*code sample from here*/
-/*
-[required code]
-parent {
-  opacity: 0;
-  perspective: xxx; //3d effective dose
-}
-parent span {
-  //flip effect
-  transform : rotateY(xxxdeg);  //you can also use 'rotateX' together.
-  (transform-origin : xxx;) //If you want.
-  //fade effect
-  opacity: 0;
-}
-*/
 
 .ex1 {
   opacity: 0;
@@ -468,3 +447,25 @@ parent span {
   transform-origin: -50% 75%;
   opacity: 0;
 }
+
+
+.fadein1 {
+    font-size: 20px;
+    font-weight: bold;
+    animation-name: fadein1;
+    animation-duration: 2s;
+}
+@keyframes fadein1 {
+from {
+    opacity: 0;
+    transform: translateY(20px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+
+
+

@@ -13,10 +13,9 @@
                     <%= attachment_image_tag @post_image.user, :icon, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %>
                     <% end %>
                     <div class="post-content-inner mt-20">
-                        <p><br>
+                        <br>
                             <%= @post_image.caption %>
                             <br>
-                        </p>
                     </div>
                     <%= image_tag 'img/usericon1.png', :class=>"user-icon" %>By
                     <%= @post_image.user.name %>
