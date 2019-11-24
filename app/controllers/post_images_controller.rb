@@ -1,4 +1,6 @@
 class PostImagesController < ApplicationController
+	# 非ログイン時index以外非表示
+	before_action :authenticate_user!, except: [:index]
 
 	def new
 		@post_image = PostImage.new

@@ -127,10 +127,15 @@
 
 body {
   /*background-image: url(img/P6050234.jpg);*/
-  background: #1c92d2;
+  /*background: #1c92d2;
   background: -webkit-linear-gradient(to right, #1c92d2, #f2fcfe);
-  background: linear-gradient(to right, #1c92d2, #f2fcfe);
+  background: linear-gradient(to right, #1c92d2, #f2fcfe);*/
+  background: #36d1dc;
+  background: -webkit-linear-gradient(to right, #36d1dc, #5b86e5);
+  background: linear-gradient(to right, #36d1dc, #5b86e5);
   font-family: "uzura";
+  font-size: 20px;
+  font-color: white;
 
 }
 
@@ -154,6 +159,7 @@ footer {
     padding-top: 25px;
     margin:0 auto;
     color: #fff;
+    font-size: 10px;
 }
 
 
@@ -500,7 +506,9 @@ to {
 }
 
 
-
+.img-circle {
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+}
 
 /*.img_wrap{
   border: 1px solid #ddd;
