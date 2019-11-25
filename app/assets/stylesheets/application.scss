@@ -75,7 +75,6 @@
     width: 100%;
     height: 500px;
     background: rgba(0, 51, 102, 0.1);
-    /*vertical-align: middle;*/
     text-align: center;
     padding-top: 105px;
     min-height: 300px;
@@ -126,7 +125,17 @@
     }
 }
 
+@keyframes fadein1 {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 
 .block-content {
@@ -135,7 +144,6 @@
 
 .position {
     margin-top: 100px
-        /*background-color: rgba(255,255,255,0.4);*/
 }
 
 
@@ -449,25 +457,7 @@ footer {
     color: white;
 }
 
-/*アバウト試し*/
 
-/*@import url("https://fonts.googleapis.com/css?family=Heebo:900");
-html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: .2rem 0 0 0;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Heebo', sans-serif;
-  background: #f86f5e;
-}
-*/
 p {
     margin: 0;
     padding: 0;
@@ -515,34 +505,7 @@ p.desc {
     animation-duration: 2s;
 }
 
-@keyframes fadein1 {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/*.img_wrap{
-  border: 1px solid #ddd;
-  width: 300px;
-  height: 226px;
-  margin: 0 auto;
-  overflow: hidden;
-  cursor: pointer;
-}
-.img_wrap img{
-  width: 100%;
-  transition-duration: 0.5s;
-}
-.img_wrap:hover img{
-  transform: scale(1.2);
-  transition-duration: 0.5s;
-}*/
 
 .img_wrap {
     border: 1px solid #ddd;
@@ -585,19 +548,3 @@ p.desc {
     padding-right-right: 1px;
     font-size: 20px;
 }
-/*.img_wrap{
-  border: 1px solid #ddd;
-  margin: 0 auto;
-  overflow: hidden;
-}
-.img_wrap img{
-  width: 100%;
-  transform: scale(1.1);
-  cursor: pointer;
-  filter: grayscale(100%);
-  transition-duration: 0.5s;
-}
-.img_wrap img:hover{
-  filter: grayscale(0);
-  transition-duration: 0.5s;
-}*/
