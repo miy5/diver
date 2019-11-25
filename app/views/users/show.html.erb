@@ -5,7 +5,7 @@
         <div class="col-md-8 col-sm-offset-2">
             <div class="position">
                 <div class="fadein1">
-                    <%= image_tag 'img/profile.png' %>
+                    <div class="title-text">profile</div>
                 </div>
             </div>
         </div>
@@ -13,8 +13,10 @@
     <!-- ユーザー画像追加 -->
     <div class="row">
         <div class="fadein1">
-            <div class="col-md-8 col-sm-offset-2">
-                <%= attachment_image_tag @user, :icon, :fill, 80,80, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%><br>
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <%= attachment_image_tag @user, :icon, :fill, 100,100, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%><br></div>
+            <div class="col-md-4">
                 <div class="profile-text">
                     ユーザー名：
                     <%= @user.name %><br>
@@ -24,14 +26,23 @@
                     メールアドレス：
                     <%= @user.email %>
                 </div>
-                <%= link_to "プロフィール編集", edit_user_path(@user), class: "pull-right" %>
-                <br>
-                 <%= link_to "いいね一覧", favorites_path %>
-                <% end %>
-                <br>
-                <% if @user.id == current_user.id %>
-                <%= link_to '投稿フォーム', new_post_image_path %>
-                <% end %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="fadein1">
+                <div class="col-md-8 col-sm-offset-2">
+                    <div class="user-link">
+                        <%= image_tag 'img/icon2.png' %>
+                          <%= link_to "プロフィール編集", edit_user_path(@user),class:"header-link" %>
+                        <%= image_tag 'img/icon2.png' %>
+                          <%= link_to "いいね一覧", favorites_path, class:"header-link" %>
+                        <% end %>
+                        <% if @user.id == current_user.id %>
+                          <%= image_tag 'img/icon2.png' %>
+                        <%= link_to '投稿フォーム', new_post_image_path,class:"header-link" %>
+                    </div>
+                        <% end %>
+                </div>
             </div>
         </div>
     </div>

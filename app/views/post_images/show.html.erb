@@ -11,9 +11,9 @@
                     <div class="post-content">
                         <!-- 投稿したユーザーの画像表示 -->
                         <%= link_to user_path(@post_image.user) do %>
-                        <%= attachment_image_tag @post_image.user, :icon, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %>
+                        <%= attachment_image_tag @post_image.user, :icon, :fill, 100, 100, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %>
                         <% end %>
-                        <div class="post-content-inner mt-20">
+                        <div class="post-content-inner mt-100">
                             <br>
                             <%= @post_image.caption %>
                             <br>

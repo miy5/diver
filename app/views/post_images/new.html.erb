@@ -3,7 +3,7 @@
         <div class="col-md-8 col-sm-offset-2">
             <div class="position">
                 <div class="fadein1">
-                    <%= image_tag 'img/image_submission.png' %><br>
+                    <div class="title-text">upload image</div><br>
                     <%= form_for(@post_image, url: post_images_path) do |f| %>
                     <% if @post_image.errors.any? %>
                     <div id="error_explanation">
