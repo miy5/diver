@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-sm-offset-2">
+            <div class="position">
+                <div class="fadein1">
+                    <div class="title-text">upload image</div><br>
+                    <%= form_for(@post_image, url: post_images_path) do |f| %>
+                    <% if @post_image.errors.any? %>
+                    <div id="error_explanation">
+                        <h2>
+                            <%= @post_image.errors.count %>件のエラーが発生しました。</h2>
+                        <ul>
+                            <% @post_image.errors.full_messages.each do |message| %>
+                            <li>
+                                <%= message %>
+                            </li>
+                            <% end %>
+                        </ul>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-offset-3">
+                    <%= f.attachment_field :image %>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 col-sm-offset-3">
+                    <%= f.text_area :caption, class:"form-control", rows:"3", placeholder:"コメントここに" %>
+            </div>
+            <div class="col-md-6 col-sm-offset-3">
+                    <%= f.submit "送信", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
+                    <% end %>
+            </div>
+        </div>
+    </div>
+</div>

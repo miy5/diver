@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application' %>
+    <title>Diver</title>
+</head>
+
+<body>
+    <!-- ヘッダー -->
+    <div class="header">
+            <%= link_to post_images_path do %>
+            <%= image_tag 'img/02diver_s.png', :class=>"header-logo" %>
+            <%= image_tag 'img/divingram.png' %>
+            <% end %>
+
+        <% if user_signed_in? %>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <%= link_to 'マイページ', user_path(current_user.id),class:"header-link" %>
+            </li>
+            <li>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class:"header-link" %>
+            </li>
+        </ul>
+        <% else %>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <%= link_to "新規登録", new_user_registration_path,class:"header-link" %>
+            </li>
+            <li>
+                <%= link_to "ログイン", new_user_session_path,class:"header-link" %>
+            </li>
+            <% end %>
+        </ul>
+    </div>
+    <!-- 泡CSS -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+
+            <div class="wrapper">
+                <%= yield %>
+            </div>
+    </div>
+    <footer>
+        <div class="footer-text">Divingram 2019</div>
+    </footer>
+
+    <!-- slickの設定内容 -->
+    <script type="text/javascript">
+    //top一覧スライド
+    $(document).ready(function() {
+        $('.slide1').slick({
+            autoplay: true, //自動再生
+            dots: true, //ドットのナビゲーションを表示
+            infinite: true, //スライドのループ有効化
+            speed: 800, //切り替えのスピード（小さくすると速くなる）
+            fade: true, //フェードの有効化
+            cssEase: 'cubic-bezier(.645, .045, .355, 1)'
+        });
+    });
+    // / いいね一覧スライド
+    $(document).ready(function() {
+        $('.slider').slick({
+            autoplay: true,
+            centerMode: true,
+            centerPadding: '5%',
+            dots: true,
+            focusOnSelect: true,
+            infinite: true,
+            touchMove: true
+        });
+    });
+
+// postimageふわっと出てくる
+    $(function(){
+    $(window).scroll(function (){
+        $('.fadein').each(function(){
+            var elemPos = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            if (scroll > elemPos - windowHeight + 200){
+                $(this).addClass('scrollin');
+            }
+        });
+    });
+});
+
+
+
+            $(window).on('load',function(){
+                $('.ex1').textyleF();
+                $('.ex2').textyleF({
+                    duration : 3000,
+                    delay : 300,
+                    easing : 'cubic-bezier(0.785, 0.135, 0.15, 0.86)',
+                    callback : function(){
+                        $(this).css({
+                        color : '#fff',
+                        transition : '1s',
+                        });
+                        $('.desc').css('opacity',1);
+                    }
+                    });
+            });
+
+    </script>
+
+
+</body>
+
+</html>
