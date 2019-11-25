@@ -1,5 +1,5 @@
 class Admin::PostImagesController < Admin::ApplicationController
-	 before_action :authenticate_user!
+	 before_action :authenticate_admin!
 	def index
 		@post_images = PostImage.page(params[:page]).reverse_order
 	end
