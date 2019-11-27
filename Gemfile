@@ -72,7 +72,7 @@ gem "refile-mini_magick"
 gem 'kaminari','~> 1.1.1'
 
 gem 'jquery-rails'
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass', '~> 3.4.1'
 
 gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons'
