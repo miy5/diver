@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
      elsif user_signed_in?
      	 post_images_path
      	else
-         root_path
+       post_images_path
      end
     end
 
@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
     if user_signed_up?
      	 post_images_path
       else
-         root_path
+       post_images_path
     end
     end
 
