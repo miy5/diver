@@ -77,4 +77,6 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons'
 
-gem 'cancancan'
+group :production do
+  gem 'mysql2'
+end
