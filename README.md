@@ -1,24 +1,39 @@
 # README
+# ツール・ライブラリの名前
+ 
+Divingram
+ 
+## 簡単な説明
+ 
+スキューバダイビングが好きなダイバー向けの画像投稿サイト
+ 
+## 機能
+ 
+- 画像の投稿、削除
+- リアクション（いいね）
+- コメント
+ 
+## 必要要件
+ 
+- 会員登録
+会員登録しないと画像の投稿、詳細ページにアクセスできません。
+- PCでの閲覧推奨（携帯での閲覧不可）
+ 
+## 使い方
+ 
+1. 新規登録で登録必須。登録済みのユーザーはログインすると詳細ペ－ジが見れる。
+2. 画像詳細ページでリアクション（いいね機能）とコメントができる。
+3. 画像詳細ページで投稿したユーザーアイコンをクリックすると、そのユーザーのプロフィールが見れる。
+4.ユーザーはマイページでプロフィールの編集、退会、ユーザーがいいねした画像の一覧を見れる。
+ 
+## インストール
+ 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+$ git clone https://github.com/miy5/diver
 
-Things you may want to cover:
+ 
+## デプロイ
+ 
+http://18.179.7.145/post_images
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
